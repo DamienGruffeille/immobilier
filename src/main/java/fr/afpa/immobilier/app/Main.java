@@ -1,35 +1,23 @@
 package fr.afpa.immobilier.app;
 
+import fr.afpa.immobilier.data.AppDataSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Main extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public static void main(String[] args) {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/immobilier", "root", "root");
-
-            Statement statement = connection.createStatement();
-
-            ResultSet resultSet = statement.executeQuery("select * from appart");
-
+        try (
+                final Connection connection = AppDataSource.INSTANCE.getConnection();
+                final Statement statement = connection.createStatement();
+                final ResultSet resultSet = statement.executeQuery("select * from appart");
+        ) {
             while (resultSet.next()) {
 
                 System.out.println("Numero appart : " + resultSet.getString("noappart"));
@@ -42,5 +30,14 @@ public class Main extends Application {
             e.printStackTrace();
         }
         launch();
+    }
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 }
