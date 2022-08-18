@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -101,15 +102,17 @@ public class ControllerNouvelAppart implements Initializable {
 
         try (
                 final Connection connection = AppDataSource.INSTANCE.getConnection();
-                final Statement statement = connection.createStatement();
+                PreparedStatement statement = connection.prepareStatement(
+                        "INSERT INTO appart(noappart, noimm, nbrepieces, prix, surface)" +
+                                "VALUES (?, ?, ?, ?, ?)");
+
         ) {
-            statement.executeUpdate(
-                    "INSERT INTO appart(noappart, noimm, nbrepieces, prix, surface)" +
-                            "VALUES (" + appartement.getNumAppart() +
-                            ", " + appartement.getNumImmeuble() +
-                            ", " + appartement.getNbPieces() +
-                            ", " + appartement.getPrix() +
-                            ", " + appartement.getSurface() + ")");
+            statement.setInt(1, appartement.getNumAppart());
+            statement.setString(2, appartement.getNumImmeuble());
+            statement.setInt(3, appartement.getNbPieces());
+            statement.setInt(4, appartement.getPrix());
+            statement.setFloat(5, appartement.getSurface());
+            statement.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
