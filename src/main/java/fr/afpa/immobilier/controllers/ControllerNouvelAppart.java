@@ -58,7 +58,7 @@ public class ControllerNouvelAppart implements Initializable {
 
     @FXML
     void effacerChamps(ActionEvent event) {
-
+        effacerChamps();
     }
 
     @Override
@@ -117,5 +117,12 @@ public class ControllerNouvelAppart implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void effacerChamps() {
+        txtNumAppart.setText("");
+        txtNbPieces.setText("");
+        txtPrix.setText("");
+        txtSurface.setText("");
     }
 }
