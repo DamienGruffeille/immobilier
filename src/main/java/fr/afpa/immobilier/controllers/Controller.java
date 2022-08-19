@@ -144,7 +144,7 @@ public class Controller implements Initializable {
 
     private void ajoutAppart() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/creationAppart.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Création appartement");

@@ -1,15 +1,11 @@
 package fr.afpa.immobilier.app;
 
-import fr.afpa.immobilier.data.AppDataSource;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class Main extends Application {
     public static void main(String[] args) {
@@ -38,7 +34,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/mainFrame.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Détails appartement");
         stage.setScene(scene);
         stage.show();
