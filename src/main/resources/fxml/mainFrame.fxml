@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="283.0" prefWidth="475.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.afpa.immobilier.controllers.Controller">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="7.0">
+          <children>
+              <ComboBox fx:id="cbxImmeuble" layoutX="191.0" layoutY="30.0" prefWidth="150.0" AnchorPane.bottomAnchor="186.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="14.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="30.0" prefHeight="25.0" prefWidth="171.0" text="Sélectionner l'appartement :" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="80.0" prefHeight="25.0" prefWidth="101.0" text="N° Appartement :" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="80.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" text="Nbre pièces :" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="121.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="101.0" text="Surface :" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="162.0" />
+              <Label fx:id="lblNumAppart" layoutX="126.0" layoutY="80.0" prefHeight="25.0" prefWidth="128.0" text="Label" AnchorPane.leftAnchor="126.0" AnchorPane.topAnchor="80.0" />
+              <Label fx:id="lblNbPieces" layoutX="126.0" layoutY="121.0" prefHeight="25.0" prefWidth="128.0" text="Label" AnchorPane.leftAnchor="126.0" AnchorPane.topAnchor="121.0" />
+              <Label fx:id="lblSurface" layoutX="126.0" layoutY="162.0" prefHeight="25.0" prefWidth="128.0" text="Label" AnchorPane.leftAnchor="126.0" AnchorPane.topAnchor="162.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="200.0" prefHeight="25.0" prefWidth="101.0" text="Prix :" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="200.0" />
+              <Label fx:id="lblPrix" layoutX="126.0" layoutY="200.0" prefHeight="25.0" prefWidth="128.0" text="Label" AnchorPane.leftAnchor="126.0" AnchorPane.topAnchor="200.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="235.0" layoutY="80.0" prefHeight="25.0" prefWidth="101.0" text="N° immeuble :" AnchorPane.rightAnchor="138.0" />
+              <Label fx:id="lblNumImmeuble" layoutX="341.0" layoutY="80.0" prefHeight="25.0" prefWidth="121.0" text="Label" AnchorPane.rightAnchor="10.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="235.0" layoutY="121.0" prefHeight="25.0" prefWidth="101.0" text="Adresse :" AnchorPane.rightAnchor="138.0" />
+              <Label alignment="CENTER_RIGHT" layoutX="235.0" layoutY="162.0" prefHeight="25.0" prefWidth="101.0" text="Ville :" AnchorPane.rightAnchor="138.0" />
+              <Label fx:id="lblVille" layoutX="341.0" layoutY="162.0" prefHeight="25.0" prefWidth="128.0" text="Label" />
+              <Label fx:id="lblAdresse" layoutX="341.0" layoutY="121.0" prefHeight="25.0" prefWidth="128.0" text="Label" />
+          </children>
+      </AnchorPane>
+        <Button fx:id="btnValider" layoutX="192.0" layoutY="261.0" mnemonicParsing="false" onAction="#rechercherAppart" text="Valider" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="192.0" />
+        <Button fx:id="btnEffacer" layoutX="267.0" layoutY="261.0" mnemonicParsing="false" onAction="#effacer" text="Effacer" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="267.0" />
+      <Button fx:id="btnAjouter" layoutX="340.0" layoutY="261.0" mnemonicParsing="false" onAction="#ajouterAppart" text="Ajouter" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="340.0" />
+   </children>
+</AnchorPane>

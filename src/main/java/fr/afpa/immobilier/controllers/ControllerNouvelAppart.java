@@ -48,7 +48,7 @@ public class ControllerNouvelAppart implements Initializable {
 
     @FXML
     void annulerCreation(ActionEvent event) {
-
+        
     }
 
     @FXML
