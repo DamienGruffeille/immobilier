@@ -123,7 +123,6 @@ public class Controller implements Initializable {
                 lblNumImmeuble.setText(resultSet.getString("noimm"));
                 lblAdresse.setText(resultSet.getString("immeuble.adresse"));
                 lblVille.setText(resultSet.getString("immeuble.ville"));
-                //System.out.println("Prix : " + resultSet.getString("prix"));
             }
 
         } catch (Exception e) {
